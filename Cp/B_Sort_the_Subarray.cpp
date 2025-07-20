@@ -1,0 +1,111 @@
+/*Monocarp had an array a
+ consisting of n
+ integers. He has decided to choose two integers l
+ and r
+ such that 1≤l≤r≤n
+, and then sort the subarray a[l..r]
+ (the subarray a[l..r]
+ is the part of the array a
+ containing the elements al,al+1,al+2,…,ar−1,ar
+) in non-descending order. After sorting the subarray, Monocarp has obtained a new array, which we denote as a′
+.
+
+For example, if a=[6,7,3,4,4,6,5]
+, and Monocarp has chosen l=2,r=5
+, then a′=[6,3,4,4,7,6,5]
+.
+
+You are given the arrays a
+ and a′
+. Find the integers l
+ and r
+ that Monocarp could have chosen. If there are multiple pairs of values (l,r)
+, find the one which corresponds to the longest subarray.
+
+Input
+The first line contains one integer t
+ (1≤t≤104
+) — the number of test cases.
+
+Each test case consists of three lines:
+
+the first line contains one integer n
+ (2≤n≤2⋅105
+);
+the second line contains n
+ integers a1,a2,…,an
+ (1≤ai≤n
+);
+the third line contains n
+ integers a′1,a′2,…,a′n
+ (1≤a′i≤n
+).
+Additional constraints on the input:
+
+the sum of n
+ over all test cases does not exceed 2⋅105
+;
+it is possible to obtain the array a′
+ by sorting one subarray of a
+;
+a′≠a
+ (there exists at least one position in which these two arrays are different).
+Output
+For each test case, print two integers — the values of l
+ and r
+ (1≤l≤r≤n
+). If there are multiple answers, print the values that correspond to the longest subarray. If there are still multiple answers, print any of them.
+*/
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define mod 1000000007
+void solve()
+{
+    int n;
+    cin >> n;
+    vector<int> l(n);
+    for(auto& i: l){
+        cin >> i;
+    }
+    vector<int> a(n);
+    for(auto& i: a){
+        cin >> i;
+    }
+    int s=0, e=0;
+    int anss=0, anse=0;
+    while(e<n-1){
+        // cout << s << " " << e << " ";
+        if(a[e+1]>=a[e]){
+            e++;
+        }
+        else{
+            if(e-s>anse-anss){
+                anse = e;
+                anss = s;
+            }
+            s=e+1;
+            e++;
+        }
+    }
+    if(e-s>anse-anss){
+            anse = e;
+            anss = s;
+    }
+    cout << anss+1 << " " << anse+1 << endl;    
+}
+int main() {
+    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+
+    ll test=1;
+cin>>test;
+    while(test--)
+    {
+        solve();
+    }
+    return 0;
+}
