@@ -1,0 +1,5 @@
+.vscode/
+.cph/
+*.exe
+Graphics/OpenGL/OpenGLTut/.vs/
+Graphics/
