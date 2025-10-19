@@ -5,7 +5,7 @@ using namespace std;
 #define ll long long
 #define mod 1000000007
 
-void recur(int n, int k, ll &count, int curr, vector<vector<ll>> &dp){
+void recur(int n, int k, ll &count, int curr ){
     if(k==0){
         count++;
         return;
@@ -47,17 +47,4 @@ int main() {
         solve();
     }
     return 0;
-}
-
-class Hehe{
-    int count = 0;
-    void recur(int n, int k, int curr){
-        if(k==0){
-            count++;
-            return;
-        }
-        for(int i=1;i*curr<=n; i++){
-            recur(n, k, curr*i);
-        }
-    }
 }

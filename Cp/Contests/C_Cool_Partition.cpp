@@ -13,7 +13,8 @@ void solve()
         cin >> i;
     }
     vector<vector<ll>> ind(n+1);
-    for(int i=0;i<n;i++){
+    for (int i = 0; i < n; i++)
+    {
         ind[l[i]].push_back(i);
     }
     ll last = 0, begin = 0;
