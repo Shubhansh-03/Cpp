@@ -2,6 +2,7 @@
  and b
 .
 
+
 You can perform two kinds of operations:
 
 a=⌊ab⌋
@@ -27,7 +28,8 @@ The only line of the description of each test case contains two integers a
 ).
 
 Output
-For each test case, print a single integer: the minimum number of operations required to make a=0
+For each test case, print a single integer: the minimum number of operations
+required to make a=0
 .
 */
 #include <bits/stdc++.h>
@@ -35,72 +37,67 @@ using namespace std;
 #define ll long long
 #define lli long long int
 #define mod 1000000007
-void solve()
-{
-    ll a,b;
+void solve() {
+  ll a, b;
 
-    cin>>a>>b;
+  cin >> a >> b;
 
-    if(b>=6){
+  if (b >= 6) {
 
-        int count = 0;
+    int count = 0;
 
-        lli x = a;
+    lli x = a;
 
-        while(x>0){
+    while (x > 0) {
 
-            x = x / b;
+      x = x / b;
 
-            count++;
-
-        }
-
-        cout<<count<<endl;
-
-    }else{
-
-        lli mincount = INT_MAX;
-
-        for(int i=b;i<=6;i++){
-
-            lli count = i - b;
-
-            lli x =a;
-
-            if(i>=2){
-
-                while(x>0){
-
-                x = x / i;
-
-                count++;
-
-                }
-
-            mincount = min(mincount,count);
-
-            }
-
-        }
-
-        cout<<mincount<<endl;
-
+      count++;
     }
 
-    // cout << "Hehe"; 
+    cout << count << endl;
+
+  } else {
+
+    lli mincount = INT_MAX;
+
+    for (int i = b; i <= 6; i++) {
+
+      lli count = i - b;
+
+      lli x = a;
+
+      if (i >= 2) {
+
+        while (x > 0) {
+
+          x = x / i;
+
+          count++;
+        }
+
+        mincount = min(mincount, count);
+      }
+    }
+
+    cout << mincount << endl;
+  }
+
+  // cout << "Hehe";
 }
 int main() {
-    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
 #endif
 
-    ll test=1;
-cin>>test;
-    while(test--)
-    {
-        solve();
-    }
-    return 0;
+  ll test = 1;
+  cin >> test;
+  while (test--) {
+    solve();
+  }
+  return 0;
 }

@@ -6,12 +6,12 @@
  are palindromic, while the arrays [1,2,3]
  and [21,12]
  are not.
-
+ c
 We call a number k
  an ideal generator if any integer n
  (n≥k
-) can be represented as the sum of the elements of a palindromic array of length exactly k
-. Each element of the array must be greater than 0
+) can be represented as the sum of the elements of a palindromic array of length
+exactly k . Each element of the array must be greater than 0
 .
 
 For example, the number 1
@@ -36,37 +36,38 @@ The first and only line of each test case contains one integer k
 
 Output
 For each number k
-, you need to output the word "YES" if it is an ideal generator, or "NO" otherwise.
+, you need to output the word "YES" if it is an ideal generator, or "NO"
+otherwise.
 
-You may output "Yes" and "No" in any case (for example, the strings "yES", "yes", and "Yes" will be recognized as a positive answer).
+You may output "Yes" and "No" in any case (for example, the strings "yES",
+"yes", and "Yes" will be recognized as a positive answer).
 */
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
 #define mod 1000000007
-void solve()
-{
-    int n;
-    cin >> n;
-    if(n&1){
-        cout << "YES" << endl;
-    }
-    else{
-        cout << "NO" << endl;
-    }
+void solve() {
+  int n;
+  cin >> n;
+  if (n & 1) {
+    cout << "YES" << endl;
+  } else {
+    cout << "NO" << endl;
+  }
 }
 int main() {
-    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
 #endif
 
-    ll test=1;
-cin>>test;
-    while(test--)
-    {
-        solve();
-    }
-    return 0;
+  ll test = 1;
+  cin >> test;
+  while (test--) {
+    solve();
+  }
+  return 0;
 }

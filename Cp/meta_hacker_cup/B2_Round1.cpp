@@ -3,13 +3,11 @@ using namespace std;
 #define int long long
 #define mod 1000000007
 
+vector<int> prime(sqrt(1e17), 0);
 void solve() {
     int n, a, b;
     cin >> n >> a >> b;
-    for(int i=0;i<2*n-1;i++){
-        cout << "1 ";
-    }
-    cout << b << endl;
+    cout << n << a << b;
 }
 
 void main_() {
@@ -21,11 +19,11 @@ void main_() {
     freopen("output.txt", "w", stdout);
 #endif
 
+
     int test = 1;
     cin >> test;
-    int num = 1;
-    while (test--) {
-        cout << "Case #" << num++ << ": ";
+    for(int t=1;t<=test;t++){
+        printf("Case #%d: ", test);
         solve();
     }
 }
