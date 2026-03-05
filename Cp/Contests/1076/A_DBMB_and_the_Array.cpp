@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+#define mod 1000000007
+void solve()
+{
+    int n, s, x;
+    cin >> n >> s >> x;
+    vector<int> a(n);
+    for(auto& i: a) cin >> i;
+
+    int sum = accumulate(a.begin(), a.end(), 0ll);
+    int diff = s - sum;
+    if(diff >=0 and diff%x == 0){
+        cout << "YES\n";
+    }
+    else{
+        cout << "NO\n";
+    }
+}
+int32_t main() {
+    ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+
+    int test=1;
+cin>>test;
+    while(test--)
+    {
+        solve();
+    }
+    return 0;
+}

@@ -51,6 +51,7 @@ void solve()
         cin >> i;
     }
     sort(l.begin(), l.end());
+    
 
     ll p = 1;
     ll two = 2;
@@ -62,6 +63,7 @@ void solve()
         }
         map[p]++;
     }
+    // while()
     ll ans = 0;
     for(ll i=0;i<32;i++){
         ans += map[i]*(map[i]-1)/2;
